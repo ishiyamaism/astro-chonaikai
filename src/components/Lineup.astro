@@ -1,0 +1,49 @@
+---
+import Line from "./Line.astro";
+---
+
+<div
+  class="max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200 py-4"
+>
+  <h2 class="font-bold">イベント</h2>
+  <p class="p-2">
+    私たちの町内会では、皆さんの笑顔と元気を支える様々なイベントを年間を通して開催しています。春の訪れを祝うカラオケ大会から、夏の夜空を彩る星空観察会まで、どのイベントも楽しさと交流の機会に満ち溢れています。地域の皆さんとの絆を深めるため、心温まる時間を一緒に過ごしましょう。
+  </p>
+  <div class="relative rounded-lg mt-2 bg-zinc-800 py-4 px-2 text-zinc-200">
+    <div
+      class="absolute top-0 left-1/2 w-4 -ml-[8px] h-full rounded-full bg-gradient-to-b from-sky-900 via-cyan-500 to-teal-900"
+    >
+      <div class="sticky top-1/2">
+        <div class="relative h-4 w-4">
+          <div
+            class="absolute h-4 w-4 animate-ping bg-amber-500 rounded-full opacity-75"
+          >
+          </div>
+          <div class="relative h-4 w-4 bg-amber-500 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+    <Line
+      date_str="1月28日"
+      events={[
+        ["16:00", "春の歌声カラオケ祭り"],
+        ["", ""],
+        ["", ""],
+        ["20:00", "並林居酒屋ナイト"],
+      ]}
+    />
+    <Line date_str="2月8日" events={[["10:00", "ウォーキング会"]]} />
+
+    <Line
+      date_str="6月15日"
+      events={[["13:00 - 15:00", "手作りお菓子交流会"]]}
+    />
+    <Line
+      date_str="7月22日"
+      events={[
+        ["", ""],
+        ["20:00", "黒歴史トーク: 並林町の秘話"],
+      ]}
+    />
+  </div>
+</div>

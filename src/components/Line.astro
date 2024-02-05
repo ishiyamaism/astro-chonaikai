@@ -1,0 +1,28 @@
+---
+interface Props {
+  date_str: string;
+  events: [string, string][];
+}
+
+const { date_str, events } = Astro.props;
+---
+
+<div class="grid grid-cols-2 gap-8">
+  <div>
+    <h3 class="p-2 bg-zinc-900 rounded-lg mt-4 text-3xl">{date_str}</h3>
+  </div>
+  <div></div>
+  {
+    events.map((event, index) => {
+      const [time, content] = event;
+      return (
+        <div>
+          <div class={index % 2 === 0 ? "text-right" : "text-left"}>
+            <div class="font-bold">{content}</div>
+            <div class="text-zinc-400">{time}</div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

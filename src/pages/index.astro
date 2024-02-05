@@ -1,16 +1,18 @@
 ---
-
+import HeadLiners from "../components/HeadLiners.astro";
+import Hero from "../components/Hero.astro";
+import Lineup from "../components/Lineup.astro";
+import Tickets from "../components/Tickets.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "並林町内会のホームページ";
+const pageDescription = "ようこそ！並林町内会のホームページへ！";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+  <div class="text-zinc-900">
+    <Hero />
+    <HeadLiners />
+    <Lineup />
+    <Tickets />
+  </div>
+</BaseLayout>

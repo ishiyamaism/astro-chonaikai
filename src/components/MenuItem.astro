@@ -1,0 +1,23 @@
+---
+interface Props {
+  caption: string;
+  subMenu?: string[];
+}
+
+const { caption, subMenu } = Astro.props;
+---
+
+<div class="menu-item group">
+  <a href="/" class="text-zinc-200 whitespace-nowrap">{caption}</a>
+  {
+    subMenu ? (
+      <div class="hidden bg-amber-800 absolute top-full right-0 whitespace-nowrap rounded-b-md text-right group-hover:block">
+        {subMenu.map((sub) => (
+          <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 ease-in-out cursor-pointer text-blue-50">
+            <span>{sub}</span>
+          </div>
+        ))}
+      </div>
+    ) : null
+  }
+</div>

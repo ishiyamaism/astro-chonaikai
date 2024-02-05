@@ -1,0 +1,78 @@
+---
+import MenuItem from "./MenuItem.astro";
+import MenuItemMobile from "./MenuItemMobile.astro";
+---
+
+<script>
+  window.onload = () => {
+    const mobileMenuIcon = document.getElementById("mobile-menu-button");
+    mobileMenuIcon?.addEventListener("click", () => {
+      if (mobileMenuIcon.classList.contains("open")) {
+        mobileMenuIcon.classList.remove("open");
+      } else {
+        mobileMenuIcon.classList.add("open");
+      }
+    });
+
+    const subMenuItem = document.getElementById("sub-menu-item");
+    subMenuItem?.addEventListener("click", () => {
+      if (subMenuItem.classList.contains("open")) {
+        subMenuItem.classList.remove("open");
+      } else {
+        subMenuItem.classList.add("open");
+      }
+    });
+  };
+</script>
+
+<div
+  class="sticky flex top-0 bg-gradient-to-r from-amber-800 to-amber-700 z-10"
+>
+  <div class="flex items-center p-2 gap-2">
+    <span class="pl-2 md:pl-6">
+      <img src="/images/header-logo.png" alt="ロゴ" width="48" height="48" />
+    </span>
+    <div
+      class="text-2xl md:text-[24px] font-bold mx-4 lg:mx-8 whitespace-nowrap"
+    >
+      並林町内会のホームページ
+    </div>
+  </div>
+  <div class="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
+    <div id="mobile-menu-button" class="group peer">
+      <div
+        class="top-0 bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative transition-all"
+      >
+      </div>
+      <div
+        class="bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0 transition-all"
+      >
+      </div>
+      <div
+        class="top-0 bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-rotate-45 group-open:-top-2 relative transition-all"
+      >
+      </div>
+    </div>
+    <div
+      class="absolute text-zinc-200 left-0 top-[64px] w-full bg-gradient-to-r from-amber-800 to-amber-700 hidden peer-open:block"
+    >
+      <MenuItemMobile caption="ホーム" />
+      <MenuItemMobile caption="役員紹介" />
+      <MenuItemMobile
+        caption="イベント"
+        subMenu={["月一特別ゴミ拾い", "週末ゴミ拾い", "毎日ゴミ拾い"]}
+      />
+      <MenuItemMobile caption="お問い合わせ" />
+    </div>
+  </div>
+
+  <div class="flex-1 hidden md:flex items-center justify-end px-4">
+    <MenuItem caption="ホーム" />
+    <MenuItem caption="役員紹介" />
+    <MenuItem
+      caption="イベント"
+      subMenu={["月一特別ゴミ拾い", "週末ゴミ拾い", "毎日ゴミ拾い"]}
+    />
+    <MenuItem caption="お問い合わせ" />
+  </div>
+</div>
