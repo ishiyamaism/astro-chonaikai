@@ -1,4 +1,11 @@
-<footer class="text-gray-600 body-font">
+---
+import { fade } from "astro:transitions";
+---
+
+<footer
+  transition:animate={fade({ duration: "1.4s" })}
+  class="text-gray-600 body-font"
+>
   <div
     class="container px-5 py-4 mt-12 mx-auto flex justify-center items-center sm:flex-row flex-col border-t"
   >
